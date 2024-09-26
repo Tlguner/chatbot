@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between the chat history and input */
+  padding: 20px;
+  height: 100%; /* Make App take full height */
+}
+
+.chat-header {
+  background-color: #007bff; /* A nice blue color for the header */
+  padding: 10px;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.chat-body {
+  flex-grow: 1; /* Make chat body take the available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Keep input area at the bottom */
+}
+
+.chat-history {
+  flex-grow: 1; /* Allow chat history to grow */
+  max-height: 75%;
+  overflow-y: auto; /* Scroll if necessary */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.chat-message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.user {
+  text-align: right;
+}
+
+.bot {
+  text-align: left;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Add a bit of space above input */
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .chat-history {
+    max-height: 60%; /* Reduce height on smaller screens */
+  }
+
+  .chat-input {
+    flex-direction: column; /* Stack input and button */
+  }
+
+  .chat-input input {
+    margin-bottom: 10px; /* Add space between input and button */
+  }
+}
